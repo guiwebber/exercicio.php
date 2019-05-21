@@ -27,40 +27,43 @@
     </div>
     <form>
   <div class="form-group">
-  <form action="DocumentoGravar.php" method="POST">
-    <label for="exampleFormControlFile1">Escolha um arquivo a ser enviado</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <form action="DocumentoGravar.php" method="POST">
+      <label for="exampleFormControlFile1">Escolha um arquivo a ser enviado</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1"name="Caminho" >
+      
+      
+      <div class="form-group">
+          <label for="exampleFormControlSelect1"> Número de cópias</label>
+          <select class="form-control" id="exampleFormControlSelect1"name="NumeroCopias">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="TipoImpressao" id="exampleRadios1" value="0" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Preto e branco
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="TipoImpressao" id="exampleRadios2" value="1">
+          <label class="form-check-label" for="exampleRadios2">
+            Colorido
+          </label>
+        </div>
+
+        <div class="text-center">
+
+          <button type="submit" class="btn btn-success ">Enviar arquivo</button>
+        </div>
+
+
+    </form>
   </div>
-</form>
-
-<div class="form-group">
-    <label for="exampleFormControlSelect1"> Número de cópias</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Preto e branco
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Colorido
-  </label>
-</div>
-<div class="text-center">
-
-   <button type="button" class="btn btn-success ">Enviar arquivo</button>
- </div>
 
  <table class="table table-striped">
             <thead class="thead-dark">

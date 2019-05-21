@@ -10,10 +10,26 @@
 </head>
 <body>
     <h1>Listagem de Usuários</h1>
+
     <a href="usuario_adicionar.php" type="button" class="btn btn-primary btn-lg btn-add">Adicionar</a>
+    
     <br>
     <br>
     <br>
+
+    <?php
+
+     include_once './classes/conexao.php';
+
+      $sql = "SELECT U.*, T.DESCRICAO
+                  FROM usuario U, tipo_usuario T
+                 WHERE T.ID = U.TIPO_USUARIO";
+  
+    $conexao = new Conexao();
+
+    $usuarios = $conexao->execute($sql);
+
+    ?>
 
     <table class="table">
   <thead class="thead-dark">
@@ -27,25 +43,23 @@
     </tr>
   </thead>
   <tbody>
+  <?php
+  
+      while($usuario = $usuarios-> fetch_array()) {
+        
+  ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Guilherme</td>
-      <td>Administrador</td>
-      <td>(54) 99145-8565</td>
-      <td>siudashuih@gmail.com</td>
+      <th scope="row"><?php echo $usuario ["ID"];?></th>
+      <td><?php echo $usuario ["NOME"]; ?></td>
+      <td><?php echo $usuario ["DESCRICAO"]; ?></td>
+      <td><?php echo $usuario ["TELEFONE"];?></td>
+      <td><?php echo $usuario ["EMAIL"];?></td>
       <td>
-        <button class="btn btn-danger">Excluir</button>
+        <a href="usuario_excluir.php?id=<?php echo $usuario ["ID"];?>" class="btn btn-danger">Excluir</a>
       </td>
-      
+      <?php  } ?>
     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
+    
   </tbody>
 </table>
 

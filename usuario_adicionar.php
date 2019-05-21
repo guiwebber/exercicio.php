@@ -28,15 +28,15 @@
     <div class="form-group">
     <label for="exampleFormControlSelect1"> Tipo</label>
     <select class="form-control" id="exampleFormControlSelect1" name ="tipo_usuario">
-      <option>Administrador</option>
-      <option>Usuário</option>
+      <option value = 1>Administrador</option>
+      <option value = 2 >Cliente</option>
       
     </select>
     
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Telefone</label>
-    <input type="text" class="form-control" name ="id" id="telefone" placeholder="Digite seu telefone" >
+    <input type="text" class="form-control" name ="telefone" id="telefone" placeholder="Digite seu telefone" >
   </div>
 
    <div class="form-group">
@@ -44,8 +44,8 @@
     <input type="email" class="form-control" name ="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu e-mail" >
     
   </div>
-  
-  <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="usuario_listar.php" class="btn btn-danger">Cancelar</a>
+    <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 
     </div>
